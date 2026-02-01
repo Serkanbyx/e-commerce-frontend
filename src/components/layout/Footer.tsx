@@ -159,6 +159,28 @@ export function Footer() {
               </span>
             </div>
           </div>
+
+          {/* Signature */}
+          <div className="mt-6 text-center text-sm text-muted-foreground">
+            Created by{' '}
+            <a
+              href="https://serkanbayraktar.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary transition-colors hover:text-primary/80"
+            >
+              Serkanby
+            </a>
+            {' | '}
+            <a
+              href="https://github.com/Serkanbyx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary transition-colors hover:text-primary/80"
+            >
+              Github
+            </a>
+          </div>
         </div>
       </div>
     </footer>
