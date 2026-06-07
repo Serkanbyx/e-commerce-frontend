@@ -1,6 +1,6 @@
 # 🛒 ShopHub - E-commerce Frontend
 
-A modern, fully responsive e-commerce frontend application featuring product catalog with filtering and pagination, shopping cart with Redux state management, and checkout flow with form validation. Built with React 18, TypeScript, Tailwind CSS, and Vite.
+A modern, fully responsive e-commerce frontend application featuring product catalog with filtering and pagination, shopping cart with Redux state management, and checkout flow with form validation. Built with React 19, TypeScript, Tailwind CSS, and Vite.
 
 [![Created by Serkanby](https://img.shields.io/badge/Created%20by-Serkanby-blue?style=flat-square)](https://serkanbayraktar.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-Serkanbyx-181717?style=flat-square&logo=github)](https://github.com/Serkanbyx)
@@ -26,15 +26,17 @@ A modern, fully responsive e-commerce frontend application featuring product cat
 
 ## Technologies
 
-- **React 18**: Modern React with hooks and functional components
+- **React 19**: Modern React with hooks and functional components
 - **TypeScript**: Type-safe development with static type checking
 - **Vite**: Next-generation frontend build tool for fast development
 - **Redux Toolkit**: Efficient state management with slices and async thunks
-- **React Router v6**: Declarative routing for single-page applications
+- **React Router v7**: Declarative routing for single-page applications
 - **React Hook Form**: Performant form handling with minimal re-renders
 - **Zod**: TypeScript-first schema validation
 - **Tailwind CSS**: Utility-first CSS framework for rapid UI development
 - **Lucide React**: Beautiful and consistent icon library
+- **Vitest + Testing Library**: Unit and component testing
+- **ESLint**: Static analysis for consistent code quality
 - **FakeStore API**: RESTful API for product data
 
 ## Project Structure
@@ -48,6 +50,7 @@ src/
 │   ├── product/        # ProductCard, ProductGrid, ProductFilters, Pagination
 │   └── ui/             # Reusable UI components (Button, Card, Input, etc.)
 ├── lib/
+│   ├── api.ts          # FakeStore API client (centralized fetch layer)
 │   ├── utils.ts        # Utility functions (cn, formatPrice)
 │   └── validations.ts  # Zod validation schemas
 ├── pages/
@@ -61,12 +64,18 @@ src/
 │   │   └── productSlice.ts # Product fetching and state
 │   ├── hooks.ts        # Typed Redux hooks
 │   └── store.ts        # Store configuration
+├── test/
+│   └── setup.ts        # Vitest + Testing Library setup
 ├── types/
 │   └── index.ts        # TypeScript interfaces
 ├── App.tsx             # Main app with routing
 ├── main.tsx            # Entry point
 └── index.css           # Global styles with Tailwind
 ```
+
+## Build Guide
+
+A detailed, step-by-step playbook covering how this project was built — from scaffolding to deployment — is available in [docs/build-guide.md](docs/build-guide.md).
 
 ## Installation
 
@@ -80,8 +89,8 @@ src/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Serkanbyx/s2.11_E-commerce-Frontend.git
-cd s2.11_E-commerce-Frontend
+git clone https://github.com/Serkanbyx/e-commerce-frontend.git
+cd e-commerce-frontend
 ```
 
 2. Install dependencies:
@@ -122,7 +131,14 @@ npm run preview
 
 ## API
 
-This project uses the [FakeStore API](https://fakestoreapi.com/) for product data.
+This project uses the [FakeStore API](https://fakestoreapi.com/) for product data. All requests go through a single client in `src/lib/api.ts`.
+
+The base URL is configurable via an environment variable. Copy `.env.example` to `.env` to override it:
+
+```bash
+cp .env.example .env
+# VITE_API_BASE_URL=https://your-api.example.com
+```
 
 **Endpoints used:**
 
@@ -140,6 +156,9 @@ This project uses the [FakeStore API](https://fakestoreapi.com/) for product dat
 | `npm run build` | Build for production (TypeScript + Vite) |
 | `npm run preview` | Preview production build locally |
 | `npm run lint` | Run ESLint for code quality |
+| `npm run lint:fix` | Auto-fix ESLint issues |
+| `npm run test` | Run the test suite once |
+| `npm run test:watch` | Run tests in watch mode |
 
 ## Features in Detail
 
@@ -245,7 +264,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
-- **Issues**: [GitHub Issues](https://github.com/Serkanbyx/s2.11_E-commerce-Frontend/issues)
+- **Issues**: [GitHub Issues](https://github.com/Serkanbyx/e-commerce-frontend/issues)
 - **Email**: [serkanbyx1@gmail.com](mailto:serkanbyx1@gmail.com)
 - **Website**: [serkanbayraktar.com](https://serkanbayraktar.com/)
 

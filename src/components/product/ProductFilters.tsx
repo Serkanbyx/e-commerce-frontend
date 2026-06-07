@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Filter, X, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -50,11 +50,12 @@ export function ProductFilters() {
     }
   }, [searchParams, dispatch]);
 
-  // Debounced price filter update
-  const debouncedPriceUpdate = useCallback(
-    debounce((minPrice: number, maxPrice: number) => {
-      dispatch(setFilters({ minPrice, maxPrice }));
-    }, 500),
+  // Debounced price filter update (memoized so the timer is stable across renders)
+  const debouncedPriceUpdate = useMemo(
+    () =>
+      debounce((minPrice: number, maxPrice: number) => {
+        dispatch(setFilters({ minPrice, maxPrice }));
+      }, 500),
     [dispatch]
   );
 

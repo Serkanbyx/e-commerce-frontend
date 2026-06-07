@@ -4,7 +4,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAppSelector } from '@/store/hooks';
 import { selectCartTotal, selectCartItemCount } from '@/store/slices/cartSlice';
-import { formatPrice, calculateOrderSummary } from '@/lib/utils';
+import {
+  formatPrice,
+  calculateOrderSummary,
+  FREE_SHIPPING_THRESHOLD,
+} from '@/lib/utils';
 
 /**
  * Cart summary component showing totals and checkout button
@@ -36,11 +40,12 @@ export function CartSummary() {
         </div>
 
         {/* Free shipping notice */}
-        {subtotal > 0 && subtotal < 100 && (
+        {subtotal > 0 && subtotal < FREE_SHIPPING_THRESHOLD && (
           <div className="flex items-center space-x-2 rounded-md bg-muted p-3 text-sm">
             <Truck className="h-4 w-4 text-muted-foreground" />
             <span>
-              Add {formatPrice(100 - subtotal)} more for free shipping!
+              Add {formatPrice(FREE_SHIPPING_THRESHOLD - subtotal)} more for free
+              shipping!
             </span>
           </div>
         )}

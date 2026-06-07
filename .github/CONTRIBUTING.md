@@ -83,18 +83,17 @@ Before suggesting, please check if:
 Make sure you have the following installed:
 
 - Git
-- Node.js (v18 or higher)
-- npm or yarn
 - A code editor (VS Code recommended)
+- Required runtime/dependencies for the project
 
 ### Local Installation
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/s2.11_E-commerce-Frontend.git
+git clone https://github.com/YOUR_USERNAME/e-commerce-frontend.git
 
 # Navigate to project directory
-cd s2.11_E-commerce-Frontend
+cd e-commerce-frontend
 
 # Install dependencies
 npm install
@@ -138,13 +137,12 @@ refactor: simplify validation logic
 
 ### Code Style
 
-- Use consistent indentation (2 spaces)
-- Use meaningful variable and function names (camelCase)
+- Use consistent indentation (2 or 4 spaces)
+- Use meaningful variable and function names
 - Write comments for complex logic
 - Keep functions small and focused
 - Follow DRY (Don't Repeat Yourself) principle
 - Remove unused code and imports
-- Use TypeScript types properly
 
 ## Branch Naming Convention
 

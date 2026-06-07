@@ -55,13 +55,21 @@ export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
   };
 }
 
+/** Order qualifies for free shipping at this subtotal (inclusive). */
+export const FREE_SHIPPING_THRESHOLD = 100;
+
+/** Flat shipping fee applied below the free-shipping threshold. */
+export const SHIPPING_FEE = 9.99;
+
+/** Sales tax rate applied to the subtotal. */
+export const TAX_RATE = 0.08;
+
 /**
  * Calculate order summary
  */
 export function calculateOrderSummary(subtotal: number) {
-  const shipping = subtotal > 100 ? 0 : 9.99;
-  const taxRate = 0.08; // 8% tax
-  const tax = subtotal * taxRate;
+  const shipping = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_FEE;
+  const tax = subtotal * TAX_RATE;
   const total = subtotal + shipping + tax;
 
   return {

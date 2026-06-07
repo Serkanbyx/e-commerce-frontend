@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Security Vulnerability
-    url: https://github.com/serkanby/s2.11_E-commerce-Frontend/security/policy
-    about: Please report security vulnerabilities through our security policy
+    url: https://github.com/serkanbyx/e-commerce-frontend/security/policy
+    about: Please report security vulnerabilities privately via our security policy (see SECURITY.md)
   - name: Questions & Discussions
-    url: https://github.com/serkanby/s2.11_E-commerce-Frontend/discussions
+    url: https://github.com/serkanbyx/e-commerce-frontend/discussions
     about: Ask questions and discuss ideas in GitHub Discussions
