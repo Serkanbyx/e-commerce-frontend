@@ -11,6 +11,32 @@ A modern, fully responsive e-commerce frontend application featuring product cat
 
 [🚀 View Live Demo](https://e-commerce-frontendd.netlify.app/)
 
+## Screenshots
+
+### Homepage
+
+Product catalog with category filters, price range, sorting, search, and pagination.
+
+![ShopHub homepage with product grid and filters](docs/screenshots/homepage.png)
+
+### Product Detail
+
+Single product view with image, rating, description, and add-to-cart action.
+
+![ShopHub product detail page](docs/screenshots/product-detail.png)
+
+### Shopping Cart
+
+Cart management with quantity controls, order summary, and checkout navigation.
+
+![ShopHub shopping cart page](docs/screenshots/cart.png)
+
+### Checkout
+
+Multi-section checkout form with shipping, payment validation, and order summary.
+
+![ShopHub checkout page with demo order](docs/screenshots/checkout.png)
+
 ## Features
 
 - **Product Listing**: Browse products with responsive grid layout and loading skeletons
